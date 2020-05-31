@@ -1,7 +1,7 @@
 
-    # project titlw
+    # simeon
     ## Description
-    described
+    its a read me generator
     ## Table of contents 
     - Installation (#installation)
     - Usage (#usage)
@@ -10,11 +10,11 @@
     - Tests (#tests)
     - Questions (questions)
     ## Installation
-    install now
+    just install it
     ##Usage
-    use
+    use it wise
     ## License
-    ![alt text](https://img.shields.io/github/license/simdoggy/project titlw.svg "License")
+    ![alt text](https://img.shields.io/github/license/Simdog/simeon.svg "License")
     __________________________
  
     

@@ -63,7 +63,7 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function (err) {
+    fs.writeFile(fileName + ".md", data, function (err) {
         if (err) {
             return console.log("it failed to write to the file Error: \n", err)
         }

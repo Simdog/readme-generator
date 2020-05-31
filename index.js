@@ -56,8 +56,9 @@ const questions = [
     }
 ];
 
-function writeToFile(data) {
-    fs.writeFile("readme.md", data, function (err) {
+function writeToFile(fileName, data) {
+    let fileName = "readme.md";
+    fs.writeFile(fileName, data, function (err) {
         if (err) {
             return console.log("it failed to write to the file Error: \n", err)
         }
@@ -71,8 +72,13 @@ async function init() {
     let profilepic;
     try {
         data = await axios.get(`https://api.github.com/users/${userInput.userName}`);
-        profilepic = data.
+        profilepic = data.avatar_url;
+    } catch (error) {
+        console.log("failed to get the user name from github: \n" , error)
     }
+    const content = makeContent(userInput);
+
+    writeToFile(userInput.fileName , content);
 
 }
 

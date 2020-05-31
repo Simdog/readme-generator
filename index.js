@@ -1,6 +1,7 @@
-const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
+const inquirer = require("inquirer");
+
 
 const questions = [
     {
@@ -46,18 +47,22 @@ const questions = [
     },
     {
         type: "input",
-        name: "contributions",
+        name: "contributors",
         message: "Co-Authors:"
     },
     {
         type: "input",
         name: "tests",
         message: "Tests:"
+    },
+    {
+        type: "input",
+        name: "fileName",
+        message: "What File Name do you want your .md file to be (readme if want default)?"
     }
 ];
 
 function writeToFile(fileName, data) {
-    let fileName = "readme.md";
     fs.writeFile(fileName, data, function (err) {
         if (err) {
             return console.log("it failed to write to the file Error: \n", err)
@@ -67,12 +72,12 @@ function writeToFile(fileName, data) {
 }
 
 async function init() {
-    const userInput = await inquirer.prompt(question);
+    const userInput = await inquirer.prompt(questions);
     const { data } = "";
-    let profilepic;
+    let profilePic;
     try {
         data = await axios.get(`https://api.github.com/users/${userInput.userName}`);
-        profilepic = data.avatar_url;
+        profilePic = data.avatar_url;
     } catch (error) {
         console.log("failed to get the user name from github: \n" , error)
     }
@@ -80,6 +85,30 @@ async function init() {
 
     writeToFile(userInput.fileName , content);
 
+}
+
+function makeContent(object) {
+    let content = `
+    # ${object.title}
+    ## Description
+    ${object.description}
+    ## Table of contents 
+    - Installation (#installation)
+    - Usage (#usage)
+    - License (#license)
+    - Contributing (#contributing)
+    - Tests (#tests)
+    - Questions (questions)
+    ## Installation
+    ${object.installation}
+    ##Usage
+    ${object.usage}
+    ## License
+    ![alt text](https://img.shields.io/github/license/${object.userName}/${object.title}.svg "License")
+    __________________________
+ 
+    `;
+    return content;
 }
 
 init();

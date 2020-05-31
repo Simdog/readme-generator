@@ -1,20 +1,22 @@
+The generated README includes the following sections:
 
-    # simeon
-    ## Description
-    its a read me generator
-    ## Table of contents 
-    - Installation (#installation)
-    - Usage (#usage)
-    - License (#license)
-    - Contributing (#contributing)
-    - Tests (#tests)
-    - Questions (questions)
-    ## Installation
-    just install it
-    ##Usage
-    use it wise
-    ## License
-    ![alt text](https://img.shields.io/github/license/Simdog/simeon.svg "License")
-    __________________________
- 
-    
+Title
+Description
+Table of Contents
+Installation
+Usage
+License
+Contributing
+Tests
+Questions
+
+
+![program running](assets/appgif.gif)
+
+
+![program working](asset/workapp.png)
+
+
+![program result](assets/resultapp.png)
+
+

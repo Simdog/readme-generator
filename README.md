@@ -14,9 +14,9 @@ Questions
 ![program running](assets/appgif.gif)
 
 
-![program working](asset/workapp.png)
+![program working](asset/workapp.PNG)
 
 
-![program result](assets/resultapp.png)
+![program result](assets/resultapp.PNG)
 
 

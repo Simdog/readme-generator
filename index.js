@@ -65,9 +65,14 @@ function writeToFile(data) {
     })
 }
 
-function init() {
+async function init() {
     const userInput = await inquirer.prompt(question);
     const { data } = "";
+    let profilepic;
+    try {
+        data = await axios.get(`https://api.github.com/users/${userInput.userName}`);
+        profilepic = data.
+    }
 
 }
 

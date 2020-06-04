@@ -73,8 +73,9 @@ function writeToFile(fileName, data) {
 
 async function init() {
     const userInput = await inquirer.prompt(questions);
-    const { data } = "";
+    let { data } = "";
     let profilePic;
+    console.log(`https://api.github.com/users/${userInput.userName}`);
     try {
         data = await axios.get(`https://api.github.com/users/${userInput.userName}`);
         profilePic = data.avatar_url;
@@ -89,6 +90,10 @@ async function init() {
 
 function makeContent(object) {
     let content = `
+    # Profile Pic
+    ${this.profilePic}
+    # Email
+    ${object.email}
     # ${object.title}
     ## Description
     ${object.description}
@@ -104,6 +109,7 @@ function makeContent(object) {
     ##Usage
     ${object.usage}
     ## License
+    ${object.license}
     ![alt text](https://img.shields.io/github/license/${object.userName}/${object.title}.svg "License")
     __________________________
  

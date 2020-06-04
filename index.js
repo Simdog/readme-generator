@@ -82,16 +82,17 @@ async function init() {
     } catch (error) {
         console.log("failed to get the user name from github: \n" , error)
     }
-    const content = makeContent(userInput);
+    const content = makeContent(userInput, data);
 
     writeToFile(userInput.fileName , content);
 
 }
 
-function makeContent(object) {
+function makeContent(object, data) {
     let content = `
     # Profile Pic
-    ![alt text](${this.profilePic})
+    [![alt text](${data.avatar_url})]
+    [![alt text](${object.userName}.avatar_url)]
     <img src=\"" + ${object.userName}.avatar_url + "\" alt=\"Github profile picture\" width=\"150\">
     # Email
     ${object.email}

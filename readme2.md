@@ -1,12 +1,13 @@
 
     # Profile Pic
-    ![alt text](undefined)
-    <img src="" + undefined + "" alt="Github profile picture" width="150">
+    [![alt text](undefined)]
+    [![alt text](simdog.avatar_url)]
+    <img src="" + simdog.avatar_url + "" alt="Github profile picture" width="150">
     # Email
     oguny006@umn.edu
     # readme generator
     ## Description
-    described project here
+    described here
     ## Table of contents 
     - Installation (#installation)
     - Usage (#usage)
@@ -15,9 +16,9 @@
     - Tests (#tests)
     - Questions (questions)
     ## Installation
-    install here
+    install
     ##Usage
-    use
+    use it
     ## License
     MIT
     <img src=""+ 'https://img.shields.io/badge/License-MIT-blue"' +" alt="badge">

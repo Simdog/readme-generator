@@ -110,11 +110,15 @@ function makeContent(object) {
     ${object.usage}
     ## License
     ${object.license}
-    ![alt text](https://img.shields.io/github/license/${object.userName}/${object.title}.svg "License")
+    [![License: ${object.license}](https://img.shields.io/badge/License-${object.license}-red.svg)](https://opensource.org/licenses/${object.license})
     __________________________
  
     `;
     return content;
 }
+
+// [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+// ![alt text](https://img.shields.io/github/license/${object.userName}/${object.title}.svg "License")
 
 init();

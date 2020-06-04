@@ -91,7 +91,8 @@ async function init() {
 function makeContent(object) {
     let content = `
     # Profile Pic
-    ${this.profilePic}
+    ![alt text](${this.profilePic})
+    <img src=\"" + ${object.userName}.avatar_url + "\" alt=\"Github profile picture\" width=\"150\">
     # Email
     ${object.email}
     # ${object.title}
@@ -110,6 +111,7 @@ function makeContent(object) {
     ${object.usage}
     ## License
     ${object.license}
+    <img src=\""+ 'https://img.shields.io/badge/License-${object.license}-blue\"' +" alt=\"badge\">\n\n"
     [![License: ${object.license}](https://img.shields.io/badge/License-${object.license}-red.svg)](https://opensource.org/licenses/${object.license})
     __________________________
  
